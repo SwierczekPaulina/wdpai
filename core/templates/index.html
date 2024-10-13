@@ -10,7 +10,7 @@
 <body>
     <div class="content">
         <label class="title-label">ADD USER</label>
-        <form method="post">
+        <form id="userForm" method="post">
             <div class="input-group">
                 <label for="name">NAME</label>
                 <input type="text" id="name" name="name">
@@ -23,6 +23,28 @@
                 <button type="submit">ADD</button>
             </div>
         </form>
+        <div id="userList">
+            <h3>USER LIST</h3>
+            <ul id="userRows"></ul>
+        </div>
     </div>
+    <script>
+        const form = document.getElementById('userForm');
+        const userList = document.getElementById('userRows');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const lastName = document.getElementById('lastname').value;
+
+            const listItem = document.createElement('li');
+            listItem.textContent = `${name} ${lastName}`;
+
+            userList.appendChild(listItem);
+
+            form.reset();
+        });
+    </script>
 </body>
 </html>

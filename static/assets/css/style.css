@@ -22,3 +22,14 @@ body {
 .button-container {
     text-align: right;
 }
+
+ul {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style-type: none;
+    padding: 0;
+}
